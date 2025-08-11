@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>项目展示</title>
+    <link rel="stylesheet" href="product.css" />
+  </head>
+  <body>
+    <header id="header">
+      <!-- 导航栏 -->
+      <div class="header-content">
+        <h1 class="logo">产品展示</h1>
+        <nav>
+          <ul>
+            <li><a href="../../index.html#product-center">全部产品</a></li>
+            <li><a href="#footer">关于我们</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <section class="hero">
+      <div class="container">
+        <h2>探索我们的精选产品</h2>
+        <p>每一款产品都经过精心挑选，为您带来卓越体验</p>
+      </div>
+    </section>
+
+    <section class="products-section">
+      <div class="container">
+        <div class="products-card-pro">
+          <img
+            src="../../阿布扎比/环保大学立面2.png"
+            alt="产品照片"
+            class="product-image"
+          />
+          <p>预制墙板</p>
+        </div>
+        <div>
+          <a href="../../index.html#product-center"
+            ><button type="button" class="load-more">更多项目展示</button></a
+          >
+        </div>
+      </div>
+    </section>
+
+    <footer id="footer">
+      <div class="footer-content">
+        <div class="footer-column">
+          <h3>产品展示</h3>
+          <p>精选优质产品，为您提供最好的选择</p>
+        </div>
+        <div class="footer-column">
+          <h4>快速链接</h4>
+          <ul>
+            <li class="footer-item">
+              <a class="footer-link" href="../../index.html">首页</a>
+            </li>
+            <li class="footer-item">
+              <a class="footer-link" href="../../index.html#product-center"
+                >全部产品</a
+              >
+            </li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h4>联系我们</h4>
+          <ul>
+            <li class="footer-item">
+              <i class="fa fa-map-marker mr-2"></i> 公司地址
+            </li>
+            <li class="footer-item">
+              <i class="fa fa-phone mr-2"></i> 电话号码
+            </li>
+            <li class="footer-item">
+              <i class="fa fa-envelope mr-2"></i> 公司邮箱
+            </li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      // 导航栏滚动效果
+      window.addEventListener("scroll", function () {
+        const header = document.querySelector("header");
+        if (window.scrollY > 50) {
+          header.style.padding = "10px 0";
+          header.style.boxShadow = "0 4px 8px rgba(0,0,0,0.1)";
+        } else {
+          header.style.padding = "15px 0";
+          header.style.boxShadow = "0 2px 5px rgba(0,0,0,0.1)";
+        }
+      });
+
+      // 加载更多按钮功能
+      const loadMoreBtn = document.querySelector(".load-more");
+      if (loadMoreBtn) {
+        loadMoreBtn.addEventListener("click", function () {
+          this.innerHTML =
+            '<i class="fa fa-spinner fa-spin mr-2"></i> 加载中...';
+
+          // 模拟加载延迟
+          setTimeout(() => {
+            this.innerHTML = '加载更多 <i class="fa fa-refresh ml-2"></i>';
+            alert("已加载全部产品");
+          }, 1500);
+        });
+      }
+    </script>
+  </body>
+</html>
