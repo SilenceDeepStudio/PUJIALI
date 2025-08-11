@@ -47,20 +47,6 @@
             class="product-image"
           />
         </div>
-        <div class="carousel-slide">
-          <img
-            src="../../海南陵水/海南陵水立面1.png"
-            alt="产品照片"
-            class="product-image"
-          />
-        </div>
-        <div class="carousel-slide">
-          <img
-            src="../../海南陵水/海南陵水立面2.png"
-            alt="产品照片"
-            class="product-image"
-          />
-        </div>
       </div>
     </section>
     <section class="text-center">
@@ -139,7 +125,7 @@
           }, 1500);
         });
       }
-      let slideIndex = 0;
+      let slideIndex = 1;
       showSlides();
 
       function showSlides() {
@@ -148,7 +134,7 @@
         for (i = 0; i < slides.length; i++) {
           slides[i].style.display = "none";
         }
-        slideIndex++;
+        // 移除开头的slideIndex++
         if (slideIndex > slides.length) {
           slideIndex = 1;
         }

@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>项目展示</title>
-    <link rel="stylesheet" href="product.css" />
+    <link rel="stylesheet" href="product_item.css" />
   </head>
   <body>
     <header id="header">
@@ -28,20 +28,51 @@
     </section>
 
     <section class="products-section">
-      <div class="container">
-        <div class="products-card-pro">
+      <div class="but_prvnex">
+        <button class="load-more-prv">上一张</button>
+        <button class="load-more-nex">下一张</button>
+      </div>
+      <div class="carousel-container">
+        <div class="carousel-slide">
           <img
-            src="../../阿布扎比/环保大学立面2.png"
+            src="../../青浦华为/青浦华为1.png"
             alt="产品照片"
             class="product-image"
           />
-          <p>预制墙板</p>
         </div>
-        <div>
-          <a href="../../index.html#case-showcase"
-            ><button type="button" class="load-more">更多项目展示</button></a
-          >
+        <div class="carousel-slide">
+          <img
+            src="../../青浦华为/青浦华为2.png"
+            alt="产品照片"
+            class="product-image"
+          />
         </div>
+        <div class="carousel-slide">
+          <img
+            src="../../青浦华为/青浦华为3.png"
+            alt="产品照片"
+            class="product-image"
+          />
+        </div>
+        <div class="carousel-slide">
+          <img
+            src="../../青浦华为/青浦华为4.png"
+            alt="产品照片"
+            class="product-image"
+          />
+        </div>
+      </div>
+    </section>
+    <section class="text-center">
+      <p>青浦华为</p>
+      <p>
+        中欧产业园GRC项目分为1#楼、2#楼，本项目外部GRC幕墙面积约6500平米左右，建设主要有1号楼及2号楼报告厅，一号楼呈椭圆形建筑布置，建筑高度19.5m，地上建筑主体为三层，局部四层，地下室一层。2号楼报告厅呈不规则圆形布置，建筑高度15.6m,地上建筑主体为四层，一层为架空层高度8.1米，为此特殊造型的GRC建筑幕墙。
+      </p>
+
+      <div>
+        <a href="../../index.html#case-showcase"
+          ><button type="button" class="load-more">更多项目展示</button></a
+        >
       </div>
     </section>
 
@@ -107,6 +138,36 @@
             alert("已加载全部产品");
           }, 1500);
         });
+      }
+      let slideIndex = 1;
+      showSlides();
+
+      function showSlides() {
+        let i;
+        let slides = document.getElementsByClassName("carousel-slide");
+        for (i = 0; i < slides.length; i++) {
+          slides[i].style.display = "none";
+        }
+        // 移除开头的slideIndex++
+        if (slideIndex > slides.length) {
+          slideIndex = 1;
+        }
+        if (slideIndex < 1) {
+          slideIndex = slides.length;
+        }
+        slides[slideIndex - 1].style.display = "block";
+      }
+
+      document
+        .querySelector(".load-more-prv")
+        .addEventListener("click", () => plusSlides(-1));
+      document
+        .querySelector(".load-more-nex")
+        .addEventListener("click", () => plusSlides(1));
+
+      function plusSlides(n) {
+        slideIndex += n;
+        showSlides();
       }
     </script>
   </body>
